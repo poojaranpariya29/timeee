@@ -1,6 +1,8 @@
 import 'package:appp/digitalui.dart';
 import 'package:appp/strapui.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'analogui.dart';
 
@@ -136,9 +138,197 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Container(
+        padding: EdgeInsets.all(15),
         height: double.infinity,
         width: double.infinity,
         color: Colors.black,
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Text(
+                  "Edit",
+                  style:
+                      TextStyle(fontSize: 16, color: Colors.deepOrangeAccent),
+                ),
+                Spacer(),
+                Icon(
+                  Icons.add,
+                  color: Colors.deepOrangeAccent,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                "Alarms",
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.bed_rounded,
+                  color: Colors.grey,
+                ),
+                Text(
+                  " Sleep | Wake Up",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.grey),
+                ),
+              ],
+            ),
+            Divider(
+              color: Color(0xff17202A),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Text(
+                  "No Alarm",
+                  style: TextStyle(fontSize: 30, color: Color(0xff616A6B)),
+                ),
+                Spacer(),
+                Container(
+                  height: 25,
+                  width: 80,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xff17202A)),
+                  child: Center(
+                    child: Text(
+                      "CHANGE",
+                      style: TextStyle(color: Colors.deepOrangeAccent),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                "Tomorrow Morning",
+                style: TextStyle(color: Color(0xff616A6B), fontSize: 12),
+              ),
+            ),
+            Divider(
+              color: Color(0xff17202A),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                "Other",
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            Divider(
+              color: Color(0xff17202A),
+            ),
+            Row(
+              children: [
+                Text(
+                  "5:30",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 40,
+                      fontWeight: FontWeight.w400),
+                ),
+                Text(
+                  "AM",
+                  style: TextStyle(color: Colors.grey, fontSize: 25),
+                ),
+                Spacer(),
+                Container(
+                  height: 25,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(13),
+                      color: Colors.green),
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: Colors.white),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                "Alarm, Mon, Tue, Wed, Thu, and Fri",
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+            Divider(
+              color: Color(0xff17202A),
+            ),
+            Row(
+              children: [
+                Text(
+                  "6:00",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 40,
+                      fontWeight: FontWeight.w400),
+                ),
+                Text(
+                  "AM",
+                  style: TextStyle(color: Colors.grey, fontSize: 25),
+                ),
+                Spacer(),
+                Container(
+                  height: 25,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(13),
+                      color: Colors.green),
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: Colors.white),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                "Alarm, Mon, Tue, Wed, Thu, and Fri",
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+            Divider(
+              color: Color(0xff17202A),
+            ),
+          ],
+        ),
       ),
     );
   }
