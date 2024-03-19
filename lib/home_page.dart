@@ -1,5 +1,8 @@
 import 'package:appp/digitalui.dart';
+import 'package:appp/stoapwatch.dart';
 import 'package:appp/strapui.dart';
+import 'package:appp/timer.dart';
+import 'package:appp/worldcloak.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -327,6 +330,89 @@ class _HomePageState extends State<HomePage> {
             Divider(
               color: Color(0xff17202A),
             ),
+            Spacer(),
+            Row(
+              children: [
+                Column(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => World_cloak(),
+                            ));
+                      },
+                      child: Text(
+                        "🌏︎",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    Text(
+                      "World Cloak",
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+                Spacer(),
+                Column(
+                  children: [
+                    Text(
+                      "⏰",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    Text(
+                      "Alarms",
+                      style: TextStyle(color: Colors.deepOrangeAccent),
+                    )
+                  ],
+                ),
+                Spacer(),
+                Column(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Stoap_watch(),
+                            ));
+                      },
+                      child: Text(
+                        "⏱",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    Text(
+                      "StoapWatch",
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+                Spacer(),
+                Column(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Timer_ui(),
+                            ));
+                      },
+                      child: Text(
+                        "⏲",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    Text(
+                      "Timer",
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                )
+              ],
+            )
           ],
         ),
       ),
