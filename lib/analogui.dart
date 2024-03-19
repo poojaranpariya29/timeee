@@ -6,10 +6,10 @@ class AnalogUI extends StatefulWidget {
   const AnalogUI({super.key});
 
   @override
-  State<AnalogUI> createState() => _ClockUIState();
+  State<AnalogUI> createState() => _AnalogUIState();
 }
 
-class _ClockUIState extends State<AnalogUI> {
+class _AnalogUIState extends State<AnalogUI> {
   Duration duration = Duration();
 
   @override
@@ -20,108 +20,74 @@ class _ClockUIState extends State<AnalogUI> {
         seconds: dateTime.second,
         minutes: dateTime.minute,
         hours: dateTime.hour);
+    timer();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffEFC6E9),
+      backgroundColor: Color(0xffD69E93),
       appBar: AppBar(),
       body: Center(
-        child: Container(
-          height: 200,
-          width: 200,
-          decoration:
-              BoxDecoration(shape: BoxShape.circle, color: Colors.black12),
-          alignment: Alignment.center,
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  Text("12"),
-                  Spacer(),
-                  Text("6"),
-                ],
-              ),
-              Transform.rotate(
-                angle: 1 / 6 * pi,
-                child: Column(
-                  children: [
-                    Text("1"),
-                    Spacer(),
-                    Text("7"),
-                  ],
+        child: Stack(
+          children: [
+            Center(
+              child: Image.network(
+                  "https://rukminim2.flixcart.com/image/612/612/xif0q/wall-clock/l/a/0/fancy-and-designer-wall-clock-for-home-offices-bedroom-living-original-imagry4xzghkcvuz.jpeg?q=70"),
+            ),
+            Stack(
+              children: [
+                Positioned(
+                    top: 225,
+                    left: 80,
+                    child: Container(
+                      height: 90,
+                      width: 90,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: Colors.brown),
+                    )),
+                Positioned(
+                  top: 240,
+                  left: 122,
+                  child: Transform.rotate(
+                    angle: duration.inHours / 6 * pi,
+                    child: Container(
+                      height: 40,
+                      width: 3.5,
+                      margin: EdgeInsets.only(bottom: 20),
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
-              ),
-              Transform.rotate(
-                angle: 2 / 6 * pi,
-                child: Column(
-                  children: [
-                    Text("2"),
-                    Spacer(),
-                    Text("8"),
-                  ],
+                Positioned(
+                  top: 240,
+                  left: 122,
+                  child: Transform.rotate(
+                    angle: duration.inMinutes / 30 * pi,
+                    child: Container(
+                      height: 40,
+                      width: 2,
+                      margin: EdgeInsets.only(bottom: 20),
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
-              ),
-              Transform.rotate(
-                angle: 3 / 6 * pi,
-                child: Column(
-                  children: [
-                    Text("3"),
-                    Spacer(),
-                    Text("9"),
-                  ],
+                Positioned(
+                  top: 240,
+                  left: 122,
+                  child: Transform.rotate(
+                    angle: duration.inSeconds / 30 * pi,
+                    child: Container(
+                      height: 40,
+                      width: 1,
+                      margin: EdgeInsets.only(bottom: 20),
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
-              ),
-              Transform.rotate(
-                angle: 4 / 6 * pi,
-                child: Column(
-                  children: [
-                    Text("4"),
-                    Spacer(),
-                    Text("10"),
-                  ],
-                ),
-              ),
-              Transform.rotate(
-                angle: 5 / 6 * pi,
-                child: Column(
-                  children: [
-                    Text("5"),
-                    Spacer(),
-                    Text("11"),
-                  ],
-                ),
-              ),
-              Transform.rotate(
-                angle: duration.inHours / 6 * pi,
-                child: Container(
-                  width: 6,
-                  height: 200,
-                  margin: EdgeInsets.only(bottom: 100, top: 50),
-                  color: Colors.black,
-                ),
-              ),
-              Transform.rotate(
-                angle: duration.inMinutes / 30 * pi,
-                child: Container(
-                  width: 4,
-                  height: 200,
-                  margin: EdgeInsets.only(bottom: 100, top: 20),
-                  color: Colors.black,
-                ),
-              ),
-              Transform.rotate(
-                angle: duration.inSeconds / 30 * pi,
-                child: Container(
-                  width: 2,
-                  height: 200,
-                  margin: EdgeInsets.only(bottom: 100, top: 5),
-                  color: Colors.black,
-                ),
-              ),
-            ],
-          ),
+              ],
+            ),
+          ],
         ),
       ),
     );

@@ -15,7 +15,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.black26,
+      ),
       drawer: NavigationDrawer(
         backgroundColor: Color(0xffDFF9F6),
         children: [
@@ -136,7 +138,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: Color(0xffEFC6E9),
+        color: Colors.black,
       ),
     );
   }
